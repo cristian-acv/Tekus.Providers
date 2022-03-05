@@ -4,17 +4,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:35414",
-      "sslPort": 44352
+      "applicationUrl": "http://localhost:5595",
+      "sslPort": 44307
     }
   },
   "profiles": {
-    "Tekus.Providers.API": {
+    "Tekus.Providers.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7159;http://localhost:5159",
+      "applicationUrl": "https://localhost:7021;http://localhost:5021",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
