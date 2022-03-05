@@ -1,3 +1,4 @@
+using Tekus.Providers.Api.Middleware;
 using Tekus.Providers.Application;
 using Tekus.Providers.Infrastructure;
 
@@ -14,7 +15,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
 
+
+
 var app = builder.Build();
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
