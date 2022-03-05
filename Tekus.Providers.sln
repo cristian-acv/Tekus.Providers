@@ -15,13 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D435B313-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3E855C91-A9BC-4F36-991B-0EE74750272F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekus.Providers.Application", "Tekus.Providers.Application\Tekus.Providers.Application.csproj", "{C07446D7-9293-4239-A8DF-78AF1BD69744}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekus.Providers.Application", "Tekus.Providers.Application\Tekus.Providers.Application.csproj", "{C07446D7-9293-4239-A8DF-78AF1BD69744}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekus.Providers.Domain", "Tekus.Providers.Domain\Tekus.Providers.Domain.csproj", "{8157B720-B701-4A95-ADD3-F785D1D5F4EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekus.Providers.Domain", "Tekus.Providers.Domain\Tekus.Providers.Domain.csproj", "{8157B720-B701-4A95-ADD3-F785D1D5F4EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekus.Providers.Infrastructure", "Tekus.Providers.Infrastructure\Tekus.Providers.Infrastructure.csproj", "{C66CCAE4-0F54-4F16-8F72-149C1A336BC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekus.Providers.Infrastructure", "Tekus.Providers.Infrastructure\Tekus.Providers.Infrastructure.csproj", "{C66CCAE4-0F54-4F16-8F72-149C1A336BC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekus.Providers.API", "Tekus.Providers.API\Tekus.Providers.API.csproj", "{6A43D737-57A1-433B-A668-E05C245DCD1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekus.Providers.API", "Tekus.Providers.API\Tekus.Providers.API.csproj", "{6A43D737-57A1-433B-A668-E05C245DCD1F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C07446D7-9293-4239-A8DF-78AF1BD69744} = {C07446D7-9293-4239-A8DF-78AF1BD69744}
+		{C66CCAE4-0F54-4F16-8F72-149C1A336BC0} = {C66CCAE4-0F54-4F16-8F72-149C1A336BC0}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

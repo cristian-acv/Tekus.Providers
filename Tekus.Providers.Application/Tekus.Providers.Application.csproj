@@ -8,14 +8,23 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tekus.Providers.Domain\Tekus.Providers.Domain.csproj" />
+    <ProjectReference Include="..\Tekus.Providers.Infrastructure\Tekus.Providers.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <Folder Include="Features\Providers\Queries\" />
+    <Folder Include="Features\Services\Commands\" />
+    <Folder Include="Features\Services\Queries\" />
     <Folder Include="Models\" />
-    <Folder Include="Mappings\" />
-    <Folder Include="Features\" />
     <Folder Include="Contracts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="FluentValidation" Version="10.3.6" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
