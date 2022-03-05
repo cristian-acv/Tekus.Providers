@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using Tekus.Providers.Domain.Common;
 using Tekus.Providers.Domain.Entities;
 
 namespace Tekus.Providers.Infrastructure.Persistence
@@ -14,7 +13,22 @@ namespace Tekus.Providers.Infrastructure.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());   
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.Entity<ProviderService>()
+             .HasOne(b => b.Service)
+             .WithMany(ba => ba.ProvidersServices)
+             .HasForeignKey(bi => bi.ServiceId);
+
+            modelBuilder.Entity<ProviderService>()
+             .HasOne(b => b.Provider)
+             .WithMany(ba => ba.ProvidersServices)
+             .HasForeignKey(bi => bi.ProviderId);
+
+            modelBuilder.Entity<ProviderService>()
+             .HasOne(b => b.Service)
+             .WithMany(ba => ba.ProvidersServices)
+             .HasForeignKey(bi => bi.ServiceId);
 
         }
 

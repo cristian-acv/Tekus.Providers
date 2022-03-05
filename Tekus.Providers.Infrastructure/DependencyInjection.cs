@@ -11,7 +11,7 @@ namespace Tekus.Providers.Infrastructure
         {
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("ConnectionString"))
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
             );
 
             return services;

@@ -10,8 +10,8 @@ namespace Tekus.Providers.Application.Features.Providers.Commands.UpdateProvider
             RuleFor(P => P.NIT)
                 .NotEmpty().WithMessage("{NIT} can not be blank")
                 .NotNull()
-                .MaximumLength(20).WithMessage("{NIT} cannot exceed 100 characters ")
-                .MinimumLength(5).WithMessage("{NIT} must be at least 8 characters")
+                .MaximumLength(20).WithMessage("{NIT} cannot exceed 20 characters ")
+                .MinimumLength(5).WithMessage("{NIT} must be at least 5 characters")
                 .Matches(@"^[0-9]+$")
                 .WithMessage("The NIT only admits numbers");
 
@@ -23,7 +23,7 @@ namespace Tekus.Providers.Application.Features.Providers.Commands.UpdateProvider
             RuleFor(P => P.Description)
                 .NotEmpty().WithMessage("{Description} can not be blank")
                 .NotNull()
-                .MaximumLength(250).WithMessage("{Description} cannot exceed 150 characters ");
+                .MaximumLength(250).WithMessage("{Description} cannot exceed 250 characters ");
 
             RuleFor(P => P.Email)
                 .NotEmpty().WithMessage("{Description} can not be blank")

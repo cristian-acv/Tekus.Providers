@@ -10,8 +10,8 @@ namespace Tekus.Providers.Application.Features.Providers.Commands.CreateProvider
             RuleFor(P => P.NIT)
                 .NotEmpty().WithMessage("{NIT} can not be blank")
                 .NotNull()
-                .MaximumLength(20).WithMessage("{NIT} cannot exceed 100 characters ")
-                .MinimumLength(5).WithMessage("{NIT} must be at least 8 characters");
+                .MaximumLength(20).WithMessage("{NIT} cannot exceed 20 characters ")
+                .MinimumLength(5).WithMessage("{NIT} must be at least 5 characters");
 
             RuleFor(P => P.Name)
                 .NotEmpty().WithMessage("{Name} can not be blank")
@@ -21,10 +21,10 @@ namespace Tekus.Providers.Application.Features.Providers.Commands.CreateProvider
             RuleFor(P => P.Description)
                 .NotEmpty().WithMessage("{Description} can not be blank")
                 .NotNull()
-                .MaximumLength(250).WithMessage("{Description} cannot exceed 150 characters ");
+                .MaximumLength(250).WithMessage("{Description} cannot exceed 250 characters ");
 
             RuleFor(P => P.Email)
-                .NotEmpty().WithMessage("{Description} can not be blank")
+                .NotEmpty().WithMessage("{Email} can not be blank")
                 .NotNull()
                 .EmailAddress().WithMessage("A valid email address is required.");
 
