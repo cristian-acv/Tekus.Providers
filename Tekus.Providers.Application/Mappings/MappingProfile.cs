@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Tekus.Providers.Application.Features.Providers.Commands.CreateProvider;
 using Tekus.Providers.Application.Features.Providers.Commands.UpdateProvider;
+using Tekus.Providers.Application.Features.Services.Commands.CreateService;
+using Tekus.Providers.Application.Features.Services.Commands.UpdateService;
 using Tekus.Providers.Domain.Entities;
 
 namespace Tekus.Providers.Application.Mappings
@@ -12,6 +14,9 @@ namespace Tekus.Providers.Application.Mappings
             CreateMap<CreateProviderCommand, Provider>()
                 .ForMember(provider => provider.ProvidersServices, options => options.MapFrom(MapProviderServices));
             CreateMap<UpdateProviderCommand, Provider>();
+
+            CreateMap<CreateServiceCommand, Service>();
+            CreateMap<UpdateServiceCommand, Service>();
        
         }
 
