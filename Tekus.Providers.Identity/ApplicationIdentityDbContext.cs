@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Tekus.Providers.Identity.Configurations;
+using Tekus.Providers.Identity.Models;
 
 namespace Tekus.Providers.Identity
 {

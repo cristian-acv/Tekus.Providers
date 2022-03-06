@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Tekus.Providers.Application.Features.Providers.Commands.CreateProvider;
 using Tekus.Providers.Application.Features.Providers.Commands.DeleteProvider;
@@ -11,6 +12,7 @@ namespace Tekus.Providers.Api.Controllers
     {
        
         [HttpGet]
+        [Authorize]
         [ProducesResponseType(typeof(PaginatedList <ProviderVm>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<PaginatedList<ProviderVm>>> GetProviders([FromQuery] GetProvidersQuery query)
         {
@@ -18,6 +20,7 @@ namespace Tekus.Providers.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<int>> Create([FromBody] CreateProviderCommand command)
         {
@@ -25,6 +28,7 @@ namespace Tekus.Providers.Api.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
@@ -42,6 +46,7 @@ namespace Tekus.Providers.Api.Controllers
 
 
         [HttpDelete("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]

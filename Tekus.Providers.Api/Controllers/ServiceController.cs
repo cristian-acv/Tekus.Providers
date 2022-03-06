@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Tekus.Providers.Application.Features.Services.Commands.CreateService;
 using Tekus.Providers.Application.Features.Services.Commands.DeleteService;
@@ -11,6 +12,7 @@ namespace Tekus.Providers.Api.Controllers
     {
 
         [HttpGet("{name}")]
+        [Authorize]
         [ProducesResponseType(typeof(IEnumerable<ServicesVm>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<ServicesVm>>> GeServicesByUsername(string name)
         {
@@ -21,6 +23,7 @@ namespace Tekus.Providers.Api.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<int>> Create([FromBody] CreateServiceCommand command)
         {
@@ -28,6 +31,7 @@ namespace Tekus.Providers.Api.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
@@ -45,6 +49,7 @@ namespace Tekus.Providers.Api.Controllers
 
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]

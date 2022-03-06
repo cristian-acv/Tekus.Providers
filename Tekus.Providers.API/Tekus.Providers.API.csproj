@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tekus.Providers.Application\Tekus.Providers.Application.csproj" />
+    <ProjectReference Include="..\Tekus.Providers.Identity\Tekus.Providers.Identity.csproj" />
   </ItemGroup>
 
 </Project>
