@@ -3,11 +3,20 @@ using System.Net;
 using Tekus.Providers.Application.Features.Providers.Commands.CreateProvider;
 using Tekus.Providers.Application.Features.Providers.Commands.DeleteProvider;
 using Tekus.Providers.Application.Features.Providers.Commands.UpdateProvider;
+using Tekus.Providers.Application.Features.Providers.Queries.GetProviders;
 
 namespace Tekus.Providers.Api.Controllers
 {
     public class ProviderController : ApiControllerBase
     {
+       
+        [HttpGet]
+        [ProducesResponseType(typeof(PaginatedList <ProviderVm>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<PaginatedList<ProviderVm>>> GetProviders([FromQuery] GetProvidersQuery query)
+        {
+            return await Mediator.Send(query);
+        }
+
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<int>> Create([FromBody] CreateProviderCommand command)

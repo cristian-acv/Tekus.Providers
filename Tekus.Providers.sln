@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A55EE8E1-EAF4-4F91-8EE8-F00B0649CAA8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D435B313-91A3-4299-81C7-4E6DC7D7421B}"
+	ProjectSection(SolutionItems) = preProject
+		Tekus.Providers.Api\Program.cs = Tekus.Providers.Api\Program.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3E855C91-A9BC-4F36-991B-0EE74750272F}"
 EndProject
